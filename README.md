@@ -1,75 +1,61 @@
 # Personal Desktop Hub
 
-**Un centro de productividad personal para Windows 11, creado paso a paso con Codex.**
+**Un centro de productividad personal para Windows 11, construido por fases con Codex.**
 
-Personal Desktop Hub reúne en un escritorio configurable un lanzador de aplicaciones, widgets, calendario, notas, tareas y recordatorios. El proyecto está pensado como aplicación útil por sí misma y como caso práctico de portafolio para mostrar un proceso de desarrollo modular, explicado y verificable.
+Personal Desktop Hub integra un lanzador, barras y widgets configurables, calendario, notas, tareas y recordatorios. Incluye como capacidades opcionales un mini asistente y herramientas de correo. El proyecto sirve como aplicación de escritorio, portafolio profesional y base práctica para un curso de Codex en YouTube.
 
-> **Estado:** fase inicial de planificación y estructura. La aplicación todavía no está implementada.
+> **Estado:** planificación y estructura del repositorio. La aplicación todavía no está implementada.
 
-## Objetivos
+## Alcance resumido
 
-- Crear una aplicación de escritorio nativa para Windows 11.
-- Permitir personalizar cada elemento de forma individual y guardar sus preferencias.
-- Mantener localmente la información del usuario.
-- Desarrollar los módulos en fases pequeñas, documentando las decisiones.
-- Utilizar el proyecto como hilo conductor de un curso de Codex en YouTube.
+- Lanzador de aplicaciones, carpetas y accesos directos.
+- Barra transparente propia del Hub, panel lateral y widgets.
+- Integración visual y configurable con la barra de tareas de Windows.
+- Calendario, notas, tareas, hábitos y notificaciones.
+- Notificaciones de correo y widget para consultar el correo.
+- Mini asistente opcional, desactivado hasta que el usuario lo habilite.
+- Personalización individual, perfiles y persistencia local.
+- API y PostgreSQL en Docker como servicios opcionales de desarrollo y posible sincronización futura.
 
-## Módulos previstos
+El alcance completo, límites y exclusiones están en [documentacion/alcance.md](documentacion/alcance.md).
 
-| Módulo | Responsabilidad |
-| --- | --- |
-| Application Launcher | Aplicaciones, carpetas, accesos directos y categorías. |
-| Carousel | Presentación y navegación por el lanzador. |
-| Widget Manager / Sidebar | Widgets configurables y su disposición en pantalla. |
-| Calendar | Eventos, vistas y navegación por fechas. |
-| Task Manager | Tareas, prioridades, vencimientos y recurrencia. |
-| Notes | Notas, búsqueda, etiquetas y asociación a fechas. |
-| Habit Reminders | Recordatorios recurrentes e historial. |
-| Notification Manager | Notificaciones y horas de silencio. |
-| Settings | Perfiles, apariencia, atajos y preferencias por elemento. |
-| Data Storage | Persistencia local y migraciones de datos. |
+## Tecnologías aprobadas
 
-## Tecnologías previstas
+- C# y .NET 10 LTS para la plataforma y la lógica.
+- WPF y XAML para la interfaz nativa de Windows; patrón MVVM.
+- SQLite y Entity Framework Core para datos locales.
+- ASP.NET Core para una API opcional.
+- Docker y Docker Compose para API y PostgreSQL en desarrollo.
+- GitHub Actions para automatizar compilación y verificaciones.
 
-- C# y .NET 8 LTS.
-- WPF para la interfaz de escritorio inicial.
-- SQLite para almacenamiento local.
-- Arquitectura modular con responsabilidades separadas.
-- Git y GitHub para el control de versiones y la publicación del portafolio.
+La justificación y el papel de cada tecnología se detallan en [documentacion/tecnologias-y-justificacion.md](documentacion/tecnologias-y-justificacion.md).
 
-Las decisiones están sujetas a validación durante la primera fase. Consulta [la arquitectura](docs/architecture.md) y los registros de decisiones en `docs/adr/`.
+## Documentación
 
-## Estructura del repositorio
+- [Alcance del proyecto](documentacion/alcance.md)
+- [Tecnologías y justificación](documentacion/tecnologias-y-justificacion.md)
+- [Estructura de proyectos](documentacion/estructura-de-proyectos.md)
+- [Plan general por fases](documentacion/fases/README.md)
+- [Guía del curso de YouTube](documentacion/curso-youtube.md)
+- [Guía de contribución](CONTRIBUTING.md)
+
+Cada fase tiene su propio documento con objetivos, entregables y criterios de cierre.
+
+## Estructura
 
 ```text
 PersonalDesktopHub/
-├── .github/                 # Plantillas de colaboración
-├── assets/                  # Recursos visuales y capturas del proyecto
-├── docs/                    # Visión, arquitectura, hoja de ruta y guía del curso
-│   └── adr/                 # Decisiones de arquitectura
-├── src/                     # Código de producción, separado por proyectos
-│   ├── PersonalDesktopHub.App/
-│   ├── PersonalDesktopHub.Core/
-│   └── PersonalDesktopHub.Infrastructure/
-└── tests/                   # Pruebas organizadas por proyecto
+├── documentacion/            # Alcance, decisiones y especificación por fases
+├── docker/                   # Dockerfile y Compose para servicios opcionales
+├── src/                      # Aplicación y bibliotecas de producción
+├── tests/                    # Pruebas por proyecto
+└── assets/                   # Capturas y recursos visuales
 ```
 
 ## Inicio
 
-Esta entrega establece documentación y estructura; aún no hay una aplicación ejecutable. Para la siguiente fase se requiere Windows 11 y el SDK de .NET 8. La guía de instalación y ejecución se añadirá junto con el primer prototipo en `src/`.
-
-## Documentación
-
-- [Visión y alcance](docs/vision.md)
-- [Arquitectura inicial](docs/architecture.md)
-- [Hoja de ruta](docs/roadmap.md)
-- [Guía del curso de YouTube](docs/course-guide.md)
-- [Cómo contribuir](CONTRIBUTING.md)
-
-## Portafolio
-
-Este repositorio documentará el problema, las decisiones técnicas, la evolución por fases y las funcionalidades implementadas. Las capturas, demostraciones y enlaces a episodios se agregarán cuando existan resultados publicables.
+Esta etapa contiene la documentación y el esqueleto de carpetas; aún no hay una aplicación ejecutable. Los pasos para compilar y ejecutar se añadirán con el primer prototipo de WPF.
 
 ## Licencia
 
-La licencia aún no está definida. Se seleccionará antes de publicar el código para reutilización por terceros.
+La licencia para reutilización aún no está definida.

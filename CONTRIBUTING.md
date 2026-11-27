@@ -4,8 +4,8 @@ Personal Desktop Hub se desarrolla en fases pequeñas para que cada cambio sea c
 
 ## Antes de contribuir
 
-1. Lee el [alcance del proyecto](docs/vision.md) y la [arquitectura](docs/architecture.md).
-2. Revisa la fase activa en `docs/roadmap.md`.
+1. Lee el [alcance del proyecto](documentacion/alcance.md) y la [arquitectura](documentacion/tecnologias-y-justificacion.md).
+2. Revisa la fase activa en `documentacion/fases/README.md`.
 3. Mantén los módulos desacoplados y documenta cualquier decisión que cambie la arquitectura.
 4. No marques una funcionalidad como terminada hasta que esté implementada y verificada.
 
